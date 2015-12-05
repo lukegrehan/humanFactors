@@ -18,6 +18,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+	<style>
+		/* layout.css Style */
+		.upload-drop-zone {
+		  height: 200px;
+		  border-width: 2px;
+		  margin-bottom: 20px;
+		}
+
+		/* skin.css Style*/
+		.upload-drop-zone {
+		  color: #ccc;
+		  border-style: dashed;
+		  border-color: #ccc;
+		  line-height: 200px;
+		  text-align: center
+		}
+		.upload-drop-zone.drop {
+		  color: #222;
+		  border-color: #222;
+		}
+	</style>
+
     <title>TITLE HERE</title>
 
   </head>
@@ -42,24 +64,27 @@
     </nav>
 
 	<div class="container">
+	  <h4>Upload Documents</h4>
+	  <div class="upload-drop-zone" id="drop-zone">
+		Just drag and drop files here
+	  </div>
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+	  <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+		<div class="form-inline">
+		  <div class="form-group">
+			<input type="file" name="files[]" id="js-upload-files" multiple>
+		  </div>
+		</div>
+	  </form>
+
+	  <div class="row">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right"><i class="fa fa-times"></i></span>doc1.jpg</a>
+          <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right"><i class="fa fa-times"></i></span>doc2.png</a>
+          <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right"><i class="fa fa-times"></i></span>doc3.pdf</a>
         </div>
-        <button class="btn btn-lg btn-secondary btn-block" type="submit">Sign in</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-      </form>
+      </div>
 
-    </div> <!-- /container -->
-
+    </div>
   </body>
-
 </html>
